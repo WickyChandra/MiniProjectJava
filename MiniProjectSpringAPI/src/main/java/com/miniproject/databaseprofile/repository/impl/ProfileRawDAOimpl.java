@@ -14,7 +14,7 @@ public class ProfileRawDAOimpl implements ProfileRawDAO {
 	
 	@Override
 	public int save(ProfileRaw p) {
-		return jdbc.update("insert into profile(name, univ, grad_yr, gender, phone, skills)"
+		return jdbc.update("insert into profile_raw(name, univ, grad_yr, gender, phone, skills)"
 				+ "values"
 				+ "(?,?,?,?,?,?)", new Object[] {p.getName(), p.getUniv(), p.getGrad_yr(),
 					p.getGender(), p.getPhone(), p.getSkills()});
