@@ -14,10 +14,14 @@ public class EducationDAOimpl implements EducationDAO {
 	
 	@Override
 	public int save(Education e) {
-		System.out.println(e.getGrad_yr());
 		return jdbc.update("insert into education(grad_yr, univ_id)"
 				+ "values"
 				+ "(?,?)",new Object[] {e.getGrad_yr(), e.getUniv_id()});
+	}
+
+	@Override
+	public int delete(int id) {
+		return jdbc.update("delete from education where id=?",id);
 	}
 
 }

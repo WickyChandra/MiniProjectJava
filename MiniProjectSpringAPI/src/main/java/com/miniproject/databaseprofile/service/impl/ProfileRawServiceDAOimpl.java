@@ -21,9 +21,16 @@ public class ProfileRawServiceDAOimpl implements ProfileRawServiceDAO {
 	SkillDAO skillRepository;
 	@Override
 	public int save(ProfileRaw pr) {
+		
 		return profileRawRepository.save(new Profile(pr.getName(), pr.getGend_id(), pr.getPhone()))
 		* educationRepository.save(new Education(pr.getUniv_id(),pr.getGrad_yr()))
 		* skillRepository.save(new Skill(pr.getSkillId()));
+	}
+	@Override
+	public int delete(int id) {
+		return profileRawRepository.delete(id) * 
+				educationRepository.delete(id) *
+				skillRepository.delete(id);
 	}
 	
 

@@ -19,4 +19,9 @@ public class SkillDAOimpl implements SkillDAO {
 				+ "(?)",s.toString());
 	}
 
+	@Override
+	public int delete(int id) {
+		return jdbc.update("delete from skill where id=?",id);
+	}
+
 }

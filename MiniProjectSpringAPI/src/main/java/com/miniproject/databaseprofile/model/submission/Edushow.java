@@ -1,4 +1,4 @@
-package com.miniproject.databaseprofile.model;
+package com.miniproject.databaseprofile.model.submission;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,9 +9,10 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Gender {
+public class Edushow {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String nameg;
+	private String univ_nm;
+	private int grad_yr;
 }
