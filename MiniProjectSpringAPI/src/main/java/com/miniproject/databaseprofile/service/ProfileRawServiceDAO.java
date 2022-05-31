@@ -1,7 +1,7 @@
 package com.miniproject.databaseprofile.service;
 
-import com.miniproject.databaseprofile.model.Profile;
+import com.miniproject.databaseprofile.model.ProfileRaw;
 
 public interface ProfileRawServiceDAO {
-	public int save(Profile p);
+	public int save(ProfileRaw pr);
 }

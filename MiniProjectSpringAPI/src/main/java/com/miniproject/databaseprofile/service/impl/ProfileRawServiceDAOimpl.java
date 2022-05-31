@@ -3,18 +3,28 @@ package com.miniproject.databaseprofile.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.miniproject.databaseprofile.model.Education;
 import com.miniproject.databaseprofile.model.Profile;
+import com.miniproject.databaseprofile.model.ProfileRaw;
+import com.miniproject.databaseprofile.model.Skill;
+import com.miniproject.databaseprofile.repository.EducationDAO;
 import com.miniproject.databaseprofile.repository.ProfileDAO;
+import com.miniproject.databaseprofile.repository.SkillDAO;
 import com.miniproject.databaseprofile.service.ProfileRawServiceDAO;
-
 @Service
 public class ProfileRawServiceDAOimpl implements ProfileRawServiceDAO {
 	@Autowired
 	ProfileDAO profileRawRepository;
-	
+	@Autowired
+	EducationDAO educationRepository;
+	@Autowired
+	SkillDAO skillRepository;
 	@Override
-	public int save(Profile p) {
-		return profileRawRepository.save(p);
+	public int save(ProfileRaw pr) {
+		return profileRawRepository.save(new Profile(pr.getName(), pr.getGend_id(), pr.getPhone()))
+		* educationRepository.save(new Education(pr.getUniv_id(),pr.getGrad_yr()))
+		* skillRepository.save(new Skill(pr.getSkillId()));
 	}
+	
 
 }
