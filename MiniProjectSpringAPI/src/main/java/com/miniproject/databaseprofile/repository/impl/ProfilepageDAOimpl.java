@@ -17,9 +17,12 @@ public class ProfilepageDAOimpl implements ProfilepageDAO {
 
 	@Override
 	public List<Profilepage> selectAll() {
-		return jdbc.query("select p.name, e.univ_nm as univ_name , e.grad_yr, p.phone, g.nameg as gendr from profile p \r\n"
+		return jdbc.query("select p.name, e.univ_nm as univ_name , e.grad_yr, p.phone, g.nameg as gendr, "
+				+ "sc.skill1 as skill1, sc.skill2 as skill2, "
+				+ "sc.skill3 as skill3, sc.skill4 as skill4 from profile p \r\n"
 				+ "join edushow e on e.id = p.id\r\n"
-				+ "join gender g on g.id = p.gend_id;", new BeanPropertyRowMapper<Profilepage>(Profilepage.class));
+				+ "join gender g on g.id = p.gend_id "
+				+ "join skillshow sc on sc.id = p.id;", new BeanPropertyRowMapper<Profilepage>(Profilepage.class));
 	}
 
 	@Override

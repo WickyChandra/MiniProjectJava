@@ -9,12 +9,12 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Skillshow {
+public class Skillcol {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String skill1;
-	private String skill2;
-	private String skill3;
-	private String skill4;
+	private int skill1;
+	private int skill2;
+	private int skill3;
+	private int skill4;
 }

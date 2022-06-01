@@ -9,6 +9,7 @@ import com.miniproject.databaseprofile.model.submission.Edushow;
 import com.miniproject.databaseprofile.model.submission.Profilepage;
 import com.miniproject.databaseprofile.repository.EdushowDAO;
 import com.miniproject.databaseprofile.repository.ProfilepageDAO;
+import com.miniproject.databaseprofile.repository.SkillcolDAO;
 import com.miniproject.databaseprofile.service.ProfilepageServiceDAO;
 @Service
 public class ProfilepageServiceDAOimpl implements ProfilepageServiceDAO {
@@ -18,9 +19,14 @@ public class ProfilepageServiceDAOimpl implements ProfilepageServiceDAO {
 	@Autowired
 	EdushowDAO edushowRepository;
 	
+	@Autowired
+	SkillcolDAO skillcolRepository;
+	
 	@Override
 	public List<Profilepage> show() {
 		edushowRepository.joinedu();
+		skillcolRepository.scaleToCol();
+		skillcolRepository.joinskillnm();
 		return profilepageRepository.selectAll();
 	}
 

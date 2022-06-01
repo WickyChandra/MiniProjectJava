@@ -24,7 +24,7 @@ public class ProfileRawServiceDAOimpl implements ProfileRawServiceDAO {
 		
 		return profileRawRepository.save(new Profile(pr.getName(), pr.getGend_id(), pr.getPhone()))
 		* educationRepository.save(new Education(pr.getUniv_id(),pr.getGrad_yr()))
-		* skillRepository.save(new Skill(pr.getSkillId()));
+		* skillRepository.save(new Skill(pr.getSkill_id()));
 	}
 	@Override
 	public int delete(int id) {
@@ -37,7 +37,7 @@ public class ProfileRawServiceDAOimpl implements ProfileRawServiceDAO {
 		// TODO Auto-generated method stub
 		return profileRawRepository.update(new Profile(pr.getId(),pr.getName(), pr.getGend_id(), pr.getPhone())) * 
 				educationRepository.update(new Education(pr.getId(),pr.getUniv_id(),pr.getGrad_yr())) *
-				skillRepository.update(new Skill(pr.getId(),pr.getSkillId()));
+				skillRepository.update(new Skill(pr.getId(),pr.getSkill_id()));
 	}
 	
 

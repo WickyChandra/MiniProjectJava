@@ -18,5 +18,5 @@ public class ProfileRaw {
 	private int grad_yr;
 	private int gend_id;
 	private String phone;
-	private int[] skillId;
+	private String skill_id;
 }

@@ -16,7 +16,7 @@ public class SkillDAOimpl implements SkillDAO {
 		System.out.println(s.toString());
 		return jdbc.update(" insert into skill(skill_id)"
 				+ "value"
-				+ "(?)",s.toString());
+				+ "(?)",s.getSkill_id());
 	}
 
 	@Override
