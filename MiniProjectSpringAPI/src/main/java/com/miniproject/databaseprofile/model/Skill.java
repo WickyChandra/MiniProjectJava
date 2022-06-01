@@ -13,11 +13,11 @@ public class Skill {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private int[] skillId;
-	public Skill(int[] skillId2) {
+	private String skillId;
+	public Skill(String skillId2) {
 		this.setSkillId(skillId2);
 	}
-	public Skill(int id2, int[] skillId2) {
+	public Skill(int id2, String skillId2) {
 		this.setSkillId(skillId2);
 		this.setId(id2);
 	}

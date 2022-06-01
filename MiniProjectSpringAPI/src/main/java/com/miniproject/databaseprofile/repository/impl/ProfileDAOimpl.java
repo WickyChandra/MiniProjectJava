@@ -26,7 +26,7 @@ public class ProfileDAOimpl implements ProfileDAO {
 
 	@Override
 	public int update(Profile p) {
-		return jdbc.update("update profile"
+		return jdbc.update("update profile "
 				+ "set name = ? , "
 				+ "gend_id = ? , "
 				+ "phone = ? "

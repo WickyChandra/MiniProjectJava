@@ -12,7 +12,8 @@ public class EdushowDAOimpl implements EdushowDAO {
 	
 	@Override
 	public int joinedu() {
-		return jdbc.update("create table temp (select e.id as id, u.nameu as univ_nm, e.grad_yr as grad_yr  from education e\r\n"
+		return jdbc.update("insert into edushow\r\n"
+				+ "(select e.id as id, e.grad_yr as grad_yr, u.nameu as univ_nm  from education e\r\n"
 				+ "join univ u\r\n"
 				+ "on u.id = e.univ_id);");
 	}
