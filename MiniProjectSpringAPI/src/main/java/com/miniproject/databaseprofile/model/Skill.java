@@ -17,4 +17,8 @@ public class Skill {
 	public Skill(int[] skillId2) {
 		this.setSkillId(skillId2);
 	}
+	public Skill(int id2, int[] skillId2) {
+		this.setSkillId(skillId2);
+		this.setId(id2);
+	}
 }

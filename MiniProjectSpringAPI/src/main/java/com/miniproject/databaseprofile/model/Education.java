@@ -20,4 +20,9 @@ public class Education {
 		this.setUniv_id(univ_id2);
 		this.setGrad_yr(grad_yr2);
 	}
+	public Education(int id2, int univ_id2, int grad_yr2) {
+		this.setId(id2);
+		this.setUniv_id(univ_id2);
+		this.setGrad_yr(grad_yr2);
+	}
 }

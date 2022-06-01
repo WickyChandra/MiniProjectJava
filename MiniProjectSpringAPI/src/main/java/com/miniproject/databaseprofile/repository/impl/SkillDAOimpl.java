@@ -26,8 +26,9 @@ public class SkillDAOimpl implements SkillDAO {
 
 	@Override
 	public int update(Skill s) {
-		return jdbc.update("update from skill"
-				+ "set skill_id = ?",s.toString());
+		return jdbc.update("update skill"
+				+ "set skill_id = ? "
+				+ "where id = ?",new Object[] {s.toString(), s.getId()});
 	}
 
 }

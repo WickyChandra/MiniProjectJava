@@ -62,6 +62,10 @@ public class ProfileController {
 	public String update(@RequestBody Profile p) {
 		return profileServiceDao.update(p) +" Data berhasil dubah";
 	}
+	@PutMapping("/putProfileAllUpdate")
+	public String updateall(@RequestBody ProfileRaw pr) {
+		return profileRawServiceDao.update(pr) +" Data berhasil dubah";
+	}
 	@DeleteMapping("/deleteProfile")
 	public String delete(@RequestBody int id) {
 		return profileRawServiceDao.delete(id) +" Data berhasil dihapus";

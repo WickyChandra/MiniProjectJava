@@ -32,6 +32,13 @@ public class ProfileRawServiceDAOimpl implements ProfileRawServiceDAO {
 				educationRepository.delete(id) *
 				skillRepository.delete(id);
 	}
+	@Override
+	public int update(ProfileRaw pr) {
+		// TODO Auto-generated method stub
+		return profileRawRepository.update(new Profile(pr.getId(),pr.getName(), pr.getGend_id(), pr.getPhone())) * 
+				educationRepository.update(new Education(pr.getId(),pr.getUniv_id(),pr.getGrad_yr())) *
+				skillRepository.update(new Skill(pr.getId(),pr.getSkillId()));
+	}
 	
 
 }

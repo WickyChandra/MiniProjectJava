@@ -21,4 +21,10 @@ public class Profile {
 		this.setGend_id(gend_id2);
 		this.setPhone(phone2);
 	}
+	public Profile(int id2, String name2, int gend_id2, String phone2) {
+		this.setId(id2);
+		this.setName(name2);
+		this.setGend_id(gend_id2);
+		this.setPhone(phone2);
+	}
 }

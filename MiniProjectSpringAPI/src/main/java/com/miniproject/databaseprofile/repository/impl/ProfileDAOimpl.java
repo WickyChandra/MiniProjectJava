@@ -26,10 +26,11 @@ public class ProfileDAOimpl implements ProfileDAO {
 
 	@Override
 	public int update(Profile p) {
-		return jdbc.update("update from profile"
-				+ "set name = ? "
-				+ "gend_id = ?"
-				+ "phone = ?",new Object[] {p.getName(), p.getGend_id(), p.getPhone()});
+		return jdbc.update("update profile"
+				+ "set name = ? , "
+				+ "gend_id = ? , "
+				+ "phone = ? "
+				+ "where id = ?;",new Object[] {p.getName(), p.getGend_id(), p.getPhone(),p.getId()});
 	}
 
 }
