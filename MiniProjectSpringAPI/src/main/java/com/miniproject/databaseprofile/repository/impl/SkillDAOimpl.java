@@ -24,4 +24,10 @@ public class SkillDAOimpl implements SkillDAO {
 		return jdbc.update("delete from skill where id=?",id);
 	}
 
+	@Override
+	public int update(Skill s) {
+		return jdbc.update("update from skill"
+				+ "set skill_id = ?",s.toString());
+	}
+
 }

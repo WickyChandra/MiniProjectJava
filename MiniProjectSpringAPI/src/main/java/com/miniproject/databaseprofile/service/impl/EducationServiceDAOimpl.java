@@ -17,4 +17,9 @@ public class EducationServiceDAOimpl implements EducationServiceDAO {
 		return educationRepository.save(e);
 	}
 
+	@Override
+	public int update(Education e) {
+		return educationRepository.update(e);
+	}
+
 }

@@ -24,4 +24,12 @@ public class ProfileDAOimpl implements ProfileDAO {
 		return jdbc.update("delete from profile where id=?",id);
 	}
 
+	@Override
+	public int update(Profile p) {
+		return jdbc.update("update from profile"
+				+ "set name = ? "
+				+ "gend_id = ?"
+				+ "phone = ?",new Object[] {p.getName(), p.getGend_id(), p.getPhone()});
+	}
+
 }

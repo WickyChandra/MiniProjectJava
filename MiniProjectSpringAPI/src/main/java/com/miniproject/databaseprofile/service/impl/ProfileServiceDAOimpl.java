@@ -17,4 +17,10 @@ public class ProfileServiceDAOimpl implements ProfileServiceDAO {
 		return profileRawRepository.save(p);
 	}
 
+	@Override
+	public int update(Profile p) {
+		// TODO Auto-generated method stub
+		return profileRawRepository.update(p);
+	}
+
 }

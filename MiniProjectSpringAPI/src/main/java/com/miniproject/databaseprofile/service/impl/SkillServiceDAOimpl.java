@@ -14,5 +14,9 @@ public class SkillServiceDAOimpl implements SkillServiceDAO {
 	public int save(Skill s) {
 		return skillRepository.save(s);
 	}
+	@Override
+	public int update(Skill s) {
+		return skillRepository.update(s);
+	}
 
 }

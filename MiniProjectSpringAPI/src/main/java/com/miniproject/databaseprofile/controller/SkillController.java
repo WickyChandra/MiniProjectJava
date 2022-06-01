@@ -3,6 +3,7 @@ package com.miniproject.databaseprofile.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,5 +24,8 @@ public class SkillController {
 	public String save(@RequestBody Skill s) {
 		return skillServiceDao.save(s)+"complete";
 	}
-	
+	@PutMapping("/putSkillUpdate")
+	public String update(@RequestBody Skill s) {
+		return skillServiceDao.update(s)+" Data berhasil dubah";
+	}
 }

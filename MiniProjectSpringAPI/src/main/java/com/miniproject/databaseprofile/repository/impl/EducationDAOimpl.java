@@ -24,4 +24,11 @@ public class EducationDAOimpl implements EducationDAO {
 		return jdbc.update("delete from education where id=?",id);
 	}
 
+	@Override
+	public int update(Education e) {
+		return jdbc.update("update from education"
+				+ "grad_yr = ? "
+				+ "univ_id = ?",new Object[] {e.getGrad_yr(), e.getUniv_id()});
+	}
+
 }
