@@ -1,2 +1,2 @@
 # MiniProjectJava
-[input per orang](/img/input1orang.png)
+![input per orang](/img/input1orang.png)
